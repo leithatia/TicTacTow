@@ -3,28 +3,27 @@ int playerChoice = 0;
 bool humanToPlay = true; // human or computer to play
 
 // initialize board
-char[,] board = initializeBoard();
+char[,] board = InitializeBoard();
 
-// 1. display board
-displayBoard(board);
+DisplayBoard(board);
 
 while(!gameOver)
 {
 
   // 1. get valid input
-  playerChoice = getPlayerChoice();
+  playerChoice = GetPlayerChoice();
 
   // 2. make the move
-  makeMove(playerChoice);
+  MakeMove(playerChoice);
 
    // 3. refresh board
-   displayBoard(board);
+   DisplayBoard(board);
 
-  // 4. if game over end, else return to 1.
-  gameOver = false;
+   // 4. check if a player has won
+   gameOver = CheckForWin();
 }
 
-char[,] initializeBoard()
+char[,] InitializeBoard()
 {
   char[,] board = {
     {'7','8','9'},
@@ -35,7 +34,7 @@ char[,] initializeBoard()
   return board;
 }
 
-void displayBoard(char[,] board)
+void DisplayBoard(char[,] board)
 {
   Console.Clear();
   Console.WriteLine(" {0} | {1} | {2}",board[0,0], board[0,1], board[0,2]);
@@ -45,7 +44,7 @@ void displayBoard(char[,] board)
   Console.WriteLine(" {0} | {1} | {2}",board[2,0], board[2,1], board[2,2]);
 }
 
-int getPlayerChoice()
+int GetPlayerChoice()
 {
   // get user input
   Console.Write("\nMake your move: ");
@@ -56,20 +55,20 @@ int getPlayerChoice()
     playerInput = Console.ReadLine();
 
     // check that input is valid
-    if(playerInput != null && isValidInput(playerInput) && isValidMove(int.Parse(playerInput)))
+    if(playerInput != null && IsValidInput(playerInput) && IsValidMove(int.Parse(playerInput)))
     {
       return int.Parse(playerInput);
     }
     else
     {
-      displayBoard(board);
+      DisplayBoard(board);
       Console.WriteLine("\nThat's not a valid input.");
       Console.Write("Please enter a number from 1 - 9: ");
     }
   }
 }
 
-bool isValidInput(string input)
+bool IsValidInput(string input)
 {
   // check that input is valid (one digit)
   string[] validInputs = {"1", "2", "3", "4", "5", "6", "7", "8", "9"};
@@ -82,7 +81,7 @@ bool isValidInput(string input)
   return false;
 }
 
-bool isValidMove(int playerInput)
+bool IsValidMove(int playerInput)
 {
   switch (playerInput)
   {
@@ -119,7 +118,7 @@ bool isValidMove(int playerInput)
   return true;
 }
 
-void makeMove(int choice)
+void MakeMove(int choice)
 {
   switch (playerChoice)
   {
@@ -151,4 +150,24 @@ void makeMove(int choice)
       board[0,2] = 'X';
       break;
   }
+}
+
+bool CheckForWin()
+{
+  for(int i = 0; i < 3; i++)
+  {
+    // check for horizontal or vertical wins
+    if((board[i,0].Equals(board[i,1]) && board[i,1].Equals(board[i,2]))
+      || (board[0,i].Equals(board[1,i]) && board[1,i].Equals(board[2,i])))
+    {
+      return true;
+    }
+    // check for diagon wins
+    else if((board[0,0].Equals(board[1,1]) && board[1,1].Equals(board[2,2]))
+      || (board[0,2].Equals(board[1,1]) && board[1,1].Equals(board[2,0])))
+    {
+      return true;
+    }
+  }
+  return false;
 }
