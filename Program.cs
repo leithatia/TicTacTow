@@ -19,11 +19,8 @@ while(!gameOver)
    // 3. refresh board
    DisplayBoard(board);
 
-   // check if a player has won
+   // 4. check if a player has won
    gameOver = CheckForWin();
-
-  // 4. if game over end, else return to 1.
-  gameOver = false;
 }
 
 char[,] InitializeBoard()
@@ -157,6 +154,20 @@ void MakeMove(int choice)
 
 bool CheckForWin()
 {
-  // check for horizontal or vertical wins
- return false;
+  for(int i = 0; i < 3; i++)
+  {
+    // check for horizontal or vertical wins
+    if((board[i,0].Equals(board[i,1]) && board[i,1].Equals(board[i,2]))
+      || (board[0,i].Equals(board[1,i]) && board[1,i].Equals(board[2,i])))
+    {
+      return true;
+    }
+    // check for diagon wins
+    else if((board[0,0].Equals(board[1,1]) && board[1,1].Equals(board[2,2]))
+      || (board[0,2].Equals(board[1,1]) && board[1,1].Equals(board[2,0])))
+    {
+      return true;
+    }
+  }
+  return false;
 }
