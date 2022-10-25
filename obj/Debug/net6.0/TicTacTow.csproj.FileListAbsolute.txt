@@ -1,0 +1,15 @@
+/home/leith/code/leithatia/pg/c#/TicTacTow/bin/Debug/net6.0/TicTacTow
+/home/leith/code/leithatia/pg/c#/TicTacTow/bin/Debug/net6.0/TicTacTow.deps.json
+/home/leith/code/leithatia/pg/c#/TicTacTow/bin/Debug/net6.0/TicTacTow.runtimeconfig.json
+/home/leith/code/leithatia/pg/c#/TicTacTow/bin/Debug/net6.0/TicTacTow.dll
+/home/leith/code/leithatia/pg/c#/TicTacTow/bin/Debug/net6.0/ref/TicTacTow.dll
+/home/leith/code/leithatia/pg/c#/TicTacTow/bin/Debug/net6.0/TicTacTow.pdb
+/home/leith/code/leithatia/pg/c#/TicTacTow/obj/Debug/net6.0/TicTacTow.csproj.AssemblyReference.cache
+/home/leith/code/leithatia/pg/c#/TicTacTow/obj/Debug/net6.0/TicTacTow.GeneratedMSBuildEditorConfig.editorconfig
+/home/leith/code/leithatia/pg/c#/TicTacTow/obj/Debug/net6.0/TicTacTow.AssemblyInfoInputs.cache
+/home/leith/code/leithatia/pg/c#/TicTacTow/obj/Debug/net6.0/TicTacTow.AssemblyInfo.cs
+/home/leith/code/leithatia/pg/c#/TicTacTow/obj/Debug/net6.0/TicTacTow.csproj.CoreCompileInputs.cache
+/home/leith/code/leithatia/pg/c#/TicTacTow/obj/Debug/net6.0/TicTacTow.dll
+/home/leith/code/leithatia/pg/c#/TicTacTow/obj/Debug/net6.0/ref/TicTacTow.dll
+/home/leith/code/leithatia/pg/c#/TicTacTow/obj/Debug/net6.0/TicTacTow.pdb
+/home/leith/code/leithatia/pg/c#/TicTacTow/obj/Debug/net6.0/TicTacTow.genruntimeconfig.cache
