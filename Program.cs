@@ -9,18 +9,32 @@ DisplayBoard(board);
 
 while(!gameOver)
 {
+  if(humanToPlay)
+  {
+    playerChoice = GetPlayerChoice();
+    MakeHumanMove(playerChoice);
+    humanToPlay = false;
+  }
+  else
+  {
+    MakeComputerMove();
+    humanToPlay = true;
+  }
 
-  // 1. get valid input
-  playerChoice = GetPlayerChoice();
+  DisplayBoard(board);
+  gameOver = CheckForWin();
 
-  // 2. make the move
-  MakeMove(playerChoice);
-
-   // 3. refresh board
-   DisplayBoard(board);
-
-   // 4. check if a player has won
-   gameOver = CheckForWin();
+  if(gameOver)
+  {
+    if(!humanToPlay)
+    {
+      Console.WriteLine("\nYou Won!\n");
+    }
+    else
+    {
+      Console.WriteLine(("\nBetter luck next time!\n"));
+    }
+  }
 }
 
 char[,] InitializeBoard()
@@ -118,36 +132,82 @@ bool IsValidMove(int playerInput)
   return true;
 }
 
-void MakeMove(int choice)
+void MakeComputerMove()
+{
+  // pick random square and place 'X' if move is valid
+  Random rnd = new Random();
+  int computerChoice = 0;
+
+  do
+  {
+    computerChoice = rnd.Next(1,10);
+    Console.WriteLine("Waiting.. and the number is {0}", computerChoice);
+    if(IsValidMove(computerChoice))
+    {
+      switch(computerChoice)
+      {
+        case 1:
+          board[2,0] = 'X';
+          return;
+        case 2:
+          board[2,1] = 'X';
+          return;
+        case 3:
+          board[2,2] = 'X';
+          return;
+        case 4:
+          board[1,0] = 'X';
+          return;
+        case 5:
+          board[1,1] = 'X';
+          return;
+        case 6:
+          board[1,2] = 'X';
+          return;
+        case 7:
+          board[0,0] = 'X';
+          return;
+        case 8:
+          board[0,1] = 'X';
+          return;
+        case 9:
+          board[0,2] = 'X';
+          return;
+      }
+    }
+  } while(!IsValidMove(computerChoice));
+}
+
+void MakeHumanMove(int choice)
 {
   switch (playerChoice)
   {
     case 1:
-      board[2,0] = 'X';
+      board[2,0] = 'O';
       break;
     case 2:
-      board[2,1] = 'X';
+      board[2,1] = 'O';
       break;
     case 3:
-      board[2,2] = 'X';
+      board[2,2] = 'O';
       break;
     case 4:
-      board[1,0] = 'X';
+      board[1,0] = 'O';
       break;
     case 5:
-      board[1,1] = 'X';
+      board[1,1] = 'O';
       break;
     case 6:
-      board[1,2] = 'X';
+      board[1,2] = 'O';
       break;
     case 7:
-      board[0,0] = 'X';
+      board[0,0] = 'O';
       break;
     case 8:
-      board[0,1] = 'X';
+      board[0,1] = 'O';
       break;
     case 9:
-      board[0,2] = 'X';
+      board[0,2] = 'O';
       break;
   }
 }
