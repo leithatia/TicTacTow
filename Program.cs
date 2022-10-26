@@ -99,35 +99,15 @@ bool IsValidMove(int playerInput)
 {
   switch (playerInput)
   {
-    case 1:
-      if(board[2,0] == 'X' || board[2,0] == 'O') {return false;}
-      break;
-    case 2:
-      if(board[2,1] == 'X' || board[2,1] == 'O') {return false;}
-      break;
-    case 3:
-      if(board[2,2] == 'X' || board[2,2] == 'O') {return false;}
-      break;
-    case 4:
-      if(board[1,0] == 'X' || board[1,0] == 'O') {return false;}
-      break;
-    case 5:
-      if(board[1,1] == 'X' || board[1,1] == 'O') {return false;}
-      break;
-    case 6:
-      if(board[1,2] == 'X' || board[1,2] == 'O') {return false;}
-      break;
-    case 7:
-      if(board[0,0] == 'X' || board[0,0] == 'O') {return false;}
-      break;
-    case 8:
-      if(board[0,1] == 'X' || board[0,1] == 'O') {return false;}
-      break;
-    case 9:
-      if(board[0,2] == 'X' || board[0,2] == 'O') {return false;}
-      break;
-    default:
-    return true;
+    case 1: if(board[2,0] == 'X' || board[2,0] == 'O') {return false;} break;
+    case 2: if(board[2,1] == 'X' || board[2,1] == 'O') {return false;} break;
+    case 3: if(board[2,2] == 'X' || board[2,2] == 'O') {return false;} break;
+    case 4: if(board[1,0] == 'X' || board[1,0] == 'O') {return false;} break;
+    case 5: if(board[1,1] == 'X' || board[1,1] == 'O') {return false;} break;
+    case 6: if(board[1,2] == 'X' || board[1,2] == 'O') {return false;} break;
+    case 7: if(board[0,0] == 'X' || board[0,0] == 'O') {return false;} break;
+    case 8: if(board[0,1] == 'X' || board[0,1] == 'O') {return false;} break;
+    case 9: if(board[0,2] == 'X' || board[0,2] == 'O') {return false;} break;
   }
   return true;
 }
@@ -146,33 +126,15 @@ void MakeComputerMove()
     {
       switch(computerChoice)
       {
-        case 1:
-          board[2,0] = 'X';
-          return;
-        case 2:
-          board[2,1] = 'X';
-          return;
-        case 3:
-          board[2,2] = 'X';
-          return;
-        case 4:
-          board[1,0] = 'X';
-          return;
-        case 5:
-          board[1,1] = 'X';
-          return;
-        case 6:
-          board[1,2] = 'X';
-          return;
-        case 7:
-          board[0,0] = 'X';
-          return;
-        case 8:
-          board[0,1] = 'X';
-          return;
-        case 9:
-          board[0,2] = 'X';
-          return;
+        case 1: board[2,0] = 'X'; return;
+        case 2: board[2,1] = 'X'; return;
+        case 3: board[2,2] = 'X'; return;
+        case 4: board[1,0] = 'X'; return;
+        case 5: board[1,1] = 'X'; return;
+        case 6: board[1,2] = 'X'; return;
+        case 7: board[0,0] = 'X'; return;
+        case 8: board[0,1] = 'X'; return;
+        case 9: board[0,2] = 'X'; return;
       }
     }
   } while(!IsValidMove(computerChoice));
@@ -182,33 +144,15 @@ void MakeHumanMove(int choice)
 {
   switch (playerChoice)
   {
-    case 1:
-      board[2,0] = 'O';
-      break;
-    case 2:
-      board[2,1] = 'O';
-      break;
-    case 3:
-      board[2,2] = 'O';
-      break;
-    case 4:
-      board[1,0] = 'O';
-      break;
-    case 5:
-      board[1,1] = 'O';
-      break;
-    case 6:
-      board[1,2] = 'O';
-      break;
-    case 7:
-      board[0,0] = 'O';
-      break;
-    case 8:
-      board[0,1] = 'O';
-      break;
-    case 9:
-      board[0,2] = 'O';
-      break;
+    case 1: board[2,0] = 'O'; break;
+    case 2: board[2,1] = 'O'; break;
+    case 3: board[2,2] = 'O'; break;
+    case 4: board[1,0] = 'O'; break;
+    case 5: board[1,1] = 'O'; break;
+    case 6: board[1,2] = 'O'; break;
+    case 7: board[0,0] = 'O'; break;
+    case 8: board[0,1] = 'O'; break;
+    case 9: board[0,2] = 'O'; break;
   }
 }
 
